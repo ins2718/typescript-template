@@ -1,4 +1,3 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -9,7 +8,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "[name].js"
+        filename: "[name].js",
+        clean: true,
     },
     devtool: "source-map",
     module: {
@@ -31,8 +31,6 @@ module.exports = {
         extensions: [".ts", ".js"],
         fallback: {},
     },
-    externals: [{}],
-    plugins: [
-        new CleanWebpackPlugin(),
-    ]
+    externals: [{}], // Возможно, вам потребуется настроить externals, если у вас есть зависимости, которые не должны быть включены в бандл.
+    plugins: [],
 };
