@@ -31,10 +31,7 @@ module.exports = {
         extensions: [".ts", ".js"],
         fallback: {},
     },
-    externals: [{
-        jsdom: "commonjs jsdom",
-        puppeteer: "commonjs puppeteer",
-    }],
+    externals: [{}],
     plugins: [
         new CleanWebpackPlugin(),
     ]
